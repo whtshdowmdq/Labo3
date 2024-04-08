@@ -1,10 +1,16 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Item {
     private String titulo;
     private boolean reservado;
     private boolean disponible;
 
 
-    public Item(java.lang.String titulo) {
+
+    public Item(String titulo) {
         this.titulo = titulo;
         this.disponible = true;
         this.reservado = false;
@@ -44,9 +50,8 @@ public class Item {
     }
 
     public void reservar() {
-        if (disponible && !reservado) {
+        if (!disponible && !reservado) {
             reservado = true;
-            disponible = false;
             System.out.println("El titulo " + titulo + "ya fue reservado");
         } else {
             System.out.println("El titulo no esta disponible");
@@ -63,4 +68,5 @@ public class Item {
         }
 
     }
+    
 }
